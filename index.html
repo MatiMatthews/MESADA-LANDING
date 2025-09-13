@@ -1,107 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesada - Educa tu bolsillo</title>
-    <meta name="description" content="Mesada es una app de educación financiera para niños y adolescentes que fomenta el ahorro, la planificación y hábitos saludables con guía de los padres.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph (para redes sociales y mensajería) -->
-    <meta property="og:title" content="Mesada - Educa tu bolsillo" />
-    <meta property="og:description" content="App de educación financiera para niños y adolescentes. Fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-    <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=2" />
-    <meta property="og:url" content="https://mesada.cl" />
-    <meta property="og:type" content="website" />
+  <title>Mesada - Educa tu bolsillo</title>
+  <meta name="description" content="Mesada es una app de educación financiera para niños y adolescentes que fomenta el ahorro, la planificación y hábitos saludables con guía de los padres." />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mesada - Educa tu bolsillo" />
-    <meta name="twitter:description" content="App de educación financiera para niños y adolescentes. Fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-    <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=2" />
+  <!-- Canonical + metadatos extra -->
+  <link rel="canonical" href="https://mesada.cl/" />
+  <meta name="theme-color" content="#2962FF" />
+  <meta property="og:site_name" content="Mesada" />
+  <meta property="og:locale" content="es_CL" />
 
-    <!-- Favicon e íconos -->
-    <link rel="icon" href="mesada_logo_blanco.png" type="image/png">
-    <link rel="apple-touch-icon" href="mesada_logo_blanco.png">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mesada - Educa tu bolsillo" />
+  <meta property="og:description" content="App de educación financiera para niños y adolescentes. Fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
+  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=3" />
+  <meta property="og:url" content="https://mesada.cl" />
 
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2962FF;
-        }
-        
-        .logo-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-image {
-            height: 8rem; /* h-32 */
-            width: auto;
-            object-fit: contain;
-        }
-        
-        .secondary-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem; /* text-sm */
-            letter-spacing: 0.1em; /* tracking-wide */
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mesada - Educa tu bolsillo" />
+  <meta name="twitter:description" content="App de educación financiera para niños y adolescentes. Fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
+  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=3" />
 
-        /* Responsive styles */
-        @media (min-width: 768px) {
-            .logo-image {
-                height: 10rem; /* md:h-40 */
-            }
-            
-            .secondary-text {
-                font-size: 1rem; /* md:text-base */
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .logo-image {
-                height: 12rem; /* lg:h-48 */
-            }
-        }
-    </style>
+  <!-- Favicon e íconos -->
+  <link rel="icon" href="/mesada_logo_blanco.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/mesada_logo_blanco.png" />
+
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Datos estructurados (SoftwareApplication + Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mesada",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS, Android",
+    "url": "https://mesada.cl/",
+    "description": "Aplicación de educación financiera que enseña a niños y adolescentes a manejar dinero, ahorrar y planificar con la guía de sus padres.",
+    "publisher": { "@type": "Organization", "name": "Mesada" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mesada",
+    "url": "https://mesada.cl",
+    "logo": "https://mesada.cl/mesada_logo_blanco.png"
+  }
+  </script>
+
+  <!-- Estilos -->
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #2962FF; }
+    .logo-container { flex: 1; display: flex; align-items: center; justify-content: center; }
+    .logo-image { height: 8rem; width: auto; object-fit: contain; }
+    .secondary-text { color: rgba(255,255,255,0.7); font-size: 0.875rem; letter-spacing: 0.1em; }
+    @media (min-width: 768px){ .logo-image { height: 10rem; } .secondary-text { font-size: 1rem; } }
+    @media (min-width: 1024px){ .logo-image { height: 12rem; } }
+  </style>
 </head>
 <body>
-    <div class="min-h-screen flex flex-col items-center justify-center px-6 text-center text-white">
-        <div class="w-full max-w-2xl flex flex-col items-center justify-center min-h-screen">
-            <!-- Logo Mesada -->
-            <div class="logo-container">
-                <img 
-                    src="mesada_logo_blanco.png"
-                    alt="Mesada - Educa tu bolsillo"
-                    class="logo-image"
-                />
-            </div>
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 text-center text-white">
+    <div class="w-full max-w-2xl flex flex-col items-center justify-center min-h-screen" role="main">
+      <!-- Logo Mesada -->
+      <div class="logo-container">
+        <img
+          src="/mesada_logo_blanco.png"
+          alt="Mesada - Educa tu bolsillo"
+          width="560" height="140" decoding="async"
+          class="logo-image"
+        />
+      </div>
 
-            <!-- Tagline -->
-            <div class="pt-6 pb-12 md:pb-16">
-                <h1 class="text-2xl md:text-3xl font-semibold">Educa tu bolsillo</h1>
-                <p class="mt-4 text-white/80 max-w-xl">
-                    App de <strong>educación financiera para niños y adolescentes</strong> 
-                    que fomenta el ahorro, la planificación y hábitos saludables, 
-                    con guía de los padres.
-                </p>
-                <p class="mt-6 secondary-text">
-                    Próximamente en tus stores favoritas • 2025
-                </p>
-            </div>
-        </div>
+      <!-- Tagline -->
+      <div class="pt-6 pb-12 md:pb-16">
+        <h1 class="text-2xl md:text-3xl font-semibold">Educa tu bolsillo</h1>
+        <p class="mt-4 text-white/80 max-w-xl">
+          App de <strong>educación financiera para niños y adolescentes</strong>
+          que fomenta el ahorro, la planificación y hábitos saludables,
+          con guía de los padres.
+        </p>
+        <p class="mt-6 secondary-text">
+          Próximamente en tus stores favoritas • 2025
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- Analítica (opcional, liviana) -->
+  <!-- <script defer data-domain="mesada.cl" src="https://plausible.io/js/script.js"></script> -->
 </body>
 </html>
