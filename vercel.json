@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "https://www.mesada.cl/:path*", "destination": "https://mesada.cl/:path*", "permanent": true }
+  ]
+}
