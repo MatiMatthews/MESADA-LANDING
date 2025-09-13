@@ -1,82 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesada - Landing Page</title>
-    
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .logo-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-image {
-            height: 8rem; /* h-32 */
-            width: auto;
-            object-fit: contain;
-        }
-        
-        .secondary-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem; /* text-sm */
-            letter-spacing: 0.1em; /* tracking-wide */
-        }
-        
-        /* Responsive styles */
-        @media (min-width: 768px) {
-            .logo-image {
-                height: 10rem; /* md:h-40 */
-            }
-            
-            .secondary-text {
-                font-size: 1rem; /* md:text-base */
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .logo-image {
-                height: 12rem; /* lg:h-48 */
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO básico -->
+  <title>Mesada – Educa tu bolsillo</title>
+  <link rel="canonical" href="https://www.mesada.cl/" />
+  <meta name="description" content="Mesada es la app de educación financiera para niños y adolescentes. Enseña a ahorrar, planificar y manejar dinero con la guía de los padres. Lanzamiento 2025." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#2962FF" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mesada – Educa tu bolsillo" />
+  <meta property="og:description" content="La forma simple de enseñar a niños y adolescentes a manejar dinero: ahorro, metas y hábitos saludables. Lanzamiento 2025." />
+  <!-- Cuando tengas una imagen OG (1200x630), actualiza esta URL -->
+  <meta property="og:image" content="https://www.mesada.cl/mesada_logo_blanco.png" />
+  <meta property="og:url" content="https://www.mesada.cl/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Datos estructurados (Schema.org) para Google/AI -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mesada",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS, Android",
+    "url": "https://www.mesada.cl/",
+    "description": "Aplicación de educación financiera que enseña a niños y adolescentes a manejar dinero, ahorrar y planificar con la guía de sus padres.",
+    "publisher": { "@type": "Organization", "name": "Mesada" }
+  }
+  </script>
+
+  <!-- Custom Styles (sin cambios de tu layout) -->
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    .logo-container { flex: 1; display: flex; align-items: center; justify-content: center; }
+    .logo-image { height: 8rem; width: auto; object-fit: contain; }
+    .secondary-text { color: rgba(255,255,255,0.7); font-size: 0.875rem; letter-spacing: 0.1em; }
+    @media (min-width: 768px) { .logo-image { height: 10rem; } .secondary-text { font-size: 1rem; } }
+    @media (min-width: 1024px) { .logo-image { height: 12rem; } }
+  </style>
 </head>
 <body style="background-color: #2962FF;">
-    <div class="min-h-screen flex flex-col items-center justify-center px-6">
-        <div class="w-full max-w-2xl text-center flex flex-col items-center justify-center min-h-screen">
-            <!-- Logo Mesada - Elemento principal centrado -->
-            <div class="logo-container">
-                <img 
-                    src="mesada_logo_blanco.png"
-                    alt="Mesada Logo"
-                    class="logo-image"
-                />
-            </div>
+  <div class="min-h-screen flex flex-col items-center justify-center px-6">
+    <div class="w-full max-w-2xl text-center flex flex-col items-center justify-center min-h-screen" role="main">
+      <!-- Logo Mesada - Elemento principal centrado -->
+      <div class="logo-container">
+        <img src="mesada_logo_blanco.png" alt="Logo Mesada" class="logo-image" />
+      </div>
 
-            <!-- Línea secundaria -->
-            <div class="pb-12 md:pb-16">
-                <p class="secondary-text">
-                    Próximamente en tus stores favoritas • 2025
-                </p>
-            </div>
-        </div>
+      <!-- Tagline + línea descriptiva (añadidos para SEO/AI, manteniendo tu estética mínima) -->
+      <p class="text-white text-xl md:text-2xl font-semibold mt-4">Educa tu bolsillo</p>
+      <p class="text-white/90 max-w-xl text-base md:text-lg mt-1">
+        App de <strong>educación financiera para niños y adolescentes</strong> que fomenta el ahorro,
+        la planificación y hábitos saludables, con guía de los padres.
+      </p>
+
+      <!-- Línea secundaria (igual que antes) -->
+      <div class="pb-12 md:pb-16 mt-6">
+        <p class="secondary-text">Próximamente en tus stores favoritas • 2025</p>
+      </div>
     </div>
+  </div>
 </body>
 </html>
