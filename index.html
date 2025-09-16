@@ -17,14 +17,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mesada - Educa tu bolsillo" />
   <meta property="og:description" content="App de educación financiera para niños y adolescentes (12+). Ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=4" />
+  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=5" />
   <meta property="og:url" content="https://mesada.cl" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mesada - Educa tu bolsillo" />
   <meta name="twitter:description" content="App de educación financiera para niños y adolescentes (12+). Ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=4" />
+  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=5" />
 
   <!-- Favicon e íconos -->
   <link rel="icon" href="/favicon-b.png" type="image/png" />
@@ -42,8 +42,10 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; }
     .container-limit { max-width: 1200px; }
-    /* Suaviza los gradientes entre secciones */
-    .section-grad { transition: background 300ms ease; }
+    .hero-brand {
+      /* Azul de marca restaurado */
+      background: linear-gradient(180deg, #2962FF 0%, #1F54E6 100%);
+    }
   </style>
 </head>
 <body class="text-slate-800 antialiased bg-white">
@@ -56,28 +58,29 @@
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="#que-es" class="hover:text-slate-900 text-slate-600">¿Qué es?</a>
+        <a href="#como-funciona" class="hover:text-slate-900 text-slate-600">Cómo funciona</a>
         <a href="#beneficios" class="hover:text-slate-900 text-slate-600">Beneficios</a>
         <a href="#faq" class="hover:text-slate-900 text-slate-600">FAQ</a>
-        <a href="https://forms.gle/TU_FORM_DE_GOOGLE" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700">
+        <a href="https://forms.gle/TU_FORM_DE_GOOGLE" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-[#2962FF] px-4 py-2 text-white font-medium hover:bg-[#214ed7]">
           Avísame
         </a>
       </div>
     </nav>
   </header>
 
-  <!-- ================ HERO ================= -->
-  <section id="top" class="section-grad bg-gradient-to-b from-indigo-600 via-indigo-600 to-indigo-500 text-white">
+  <!-- ================ HERO (Azul marca) ================= -->
+  <section id="top" class="hero-brand text-white">
     <div class="container-limit mx-auto px-4 sm:px-6 lg:px-8 min-h-[72vh] flex flex-col items-center justify-center text-center">
       <img src="/mesada_logo_blanco.png" alt="Mesada" class="w-[240px] md:w-[300px] mb-6 opacity-95" />
       <h1 class="text-3xl md:text-5xl font-extrabold leading-tight max-w-3xl">
-        La forma simple de enseñar <span class="text-emerald-300">finanzas</span> en casa
+        La forma simple de enseñar <span class="text-emerald-200">finanzas</span> en casa
       </h1>
       <p class="mt-4 text-white/90 max-w-2xl">
         App de <strong>educación financiera para niños y adolescentes (12+)</strong> que fomenta el ahorro, la planificación y hábitos saludables, con guía de los padres.
       </p>
 
       <div class="mt-8 flex gap-3">
-        <a href="#que-es" class="rounded-full bg-white text-indigo-700 px-5 py-2 font-medium hover:bg-slate-100 shadow">
+        <a href="#que-es" class="rounded-full bg-white text-[#2962FF] px-5 py-2 font-medium hover:bg-slate-100 shadow">
           Ver cómo funciona
         </a>
         <a href="https://forms.gle/TU_FORM_DE_GOOGLE" target="_blank" rel="noopener" class="rounded-full bg-emerald-500 px-5 py-2 font-medium hover:bg-emerald-600 shadow text-white">
@@ -89,8 +92,8 @@
     </div>
   </section>
 
-  <!-- ================ ¿QUÉ ES MESADA? ================= -->
-  <section id="que-es" class="section-grad bg-gradient-to-b from-emerald-50 via-white to-white py-16 md:py-24">
+  <!-- ================ 1) ¿QUÉ ES MESADA? ================= -->
+  <section id="que-es" class="bg-gradient-to-b from-white via-emerald-50 to-white py-16 md:py-24">
     <div class="container-limit mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <!-- Text -->
@@ -121,48 +124,20 @@
     </div>
   </section>
 
-  <!-- ================ BENEFICIOS ================= -->
-  <section id="beneficios" class="section-grad bg-gradient-to-b from-white via-violet-50 to-white py-16 md:py-24">
+  <!-- ================ 2) CÓMO FUNCIONA ================= -->
+  <section id="como-funciona" class="bg-gradient-to-b from-white via-sky-50 to-white py-16 md:py-24">
     <div class="container-limit mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- Para familias -->
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+        <!-- Tarjetas de “cómo funciona” -->
         <div class="rounded-3xl bg-white shadow-xl p-8">
-          <p class="text-xs font-semibold tracking-widest text-violet-600">BENEFICIOS</p>
-          <h3 class="mt-2 text-3xl font-extrabold">Pensado para <span class="text-violet-600">padres</span> y <span class="text-emerald-600">niños</span></h3>
-          <p class="mt-3 text-slate-600">
-            Cada familia es distinta. Mesada ofrece herramientas claras, visuales y motivadoras para acompañar el aprendizaje y crear hábitos saludables con el dinero.
-          </p>
-
-          <div class="mt-8 grid sm:grid-cols-2 gap-5">
-            <div class="rounded-2xl border border-slate-200 p-5">
-              <h4 class="font-semibold">Para padres</h4>
-              <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-                <li>• Panel con metas, tareas y seguimiento.</li>
-                <li>• Límites configurables y guía de conversaciones.</li>
-                <li>• Reportes de progreso y hábitos.</li>
-              </ul>
-            </div>
-            <div class="rounded-2xl border border-slate-200 p-5">
-              <h4 class="font-semibold">Para niños (12+)</h4>
-              <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-                <li>• Desafíos, logros y recompensas.</li>
-                <li>• Objetivos de ahorro visuales y alcanzables.</li>
-                <li>• Educación financiera práctica, paso a paso.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cards preguntas rápidas -->
-        <div class="rounded-3xl bg-white shadow-xl p-8">
-          <p class="text-xs font-semibold tracking-widest text-sky-600">PREGUNTAS RÁPIDAS</p>
-          <h3 class="mt-2 text-3xl font-extrabold">¿Cómo funciona?</h3>
+          <p class="text-xs font-semibold tracking-widest text-sky-600">CÓMO FUNCIONA</p>
+          <h3 class="mt-2 text-3xl font-extrabold">Lo esencial paso a paso</h3>
 
           <div class="mt-6 grid gap-4">
             <div class="rounded-2xl border border-slate-200 p-5">
               <h4 class="font-semibold">¿Desde qué edad se puede usar?</h4>
               <p class="mt-2 text-slate-600 text-sm">
-                Recomendamos **desde los 12 años**. Pueden usarla con supervisión de un adulto y más autonomía a medida que crecen.
+                Recomendamos <strong>desde los 12 años</strong>. Pueden usarla con supervisión de un adulto y mayor autonomía a medida que crecen.
               </p>
             </div>
 
@@ -192,12 +167,49 @@
             Quiero enterarme del lanzamiento
           </a>
         </div>
+
+        <!-- Ilustración (opcional) -->
+        <div class="rounded-3xl bg-white shadow-xl p-8 flex items-center justify-center">
+          <img src="/ilustracion_1.png" alt="Cómo funciona Mesada" class="w-full h-auto max-w-md" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================ FAQ ================= -->
-  <section id="faq" class="section-grad bg-gradient-to-b from-white via-rose-50 to-white py-16 md:py-24">
+  <!-- ================ 3) BENEFICIOS ================= -->
+  <section id="beneficios" class="bg-gradient-to-b from-white via-violet-50 to-white py-16 md:py-24">
+    <div class="container-limit mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold tracking-widest text-violet-600">BENEFICIOS</p>
+        <h3 class="mt-2 text-3xl font-extrabold">Pensado para <span class="text-violet-600">padres</span> y <span class="text-emerald-600">niños</span></h3>
+        <p class="mt-3 text-slate-600 max-w-3xl">
+          Mesada ofrece herramientas claras, visuales y motivadoras para acompañar el aprendizaje y crear hábitos saludables con el dinero.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-5">
+          <div class="rounded-2xl border border-slate-200 p-5 bg-white shadow-sm">
+            <h4 class="font-semibold">Para padres</h4>
+            <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+              <li>• Panel con metas, tareas y seguimiento.</li>
+              <li>• Límites configurables y guía de conversaciones.</li>
+              <li>• Reportes de progreso y hábitos.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-slate-200 p-5 bg-white shadow-sm">
+            <h4 class="font-semibold">Para niños (12+)</h4>
+            <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+              <li>• Desafíos, logros y recompensas.</li>
+              <li>• Objetivos de ahorro visuales y alcanzables.</li>
+              <li>• Educación financiera práctica, paso a paso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ 4) FAQ ================= -->
+  <section id="faq" class="bg-gradient-to-b from-white via-rose-50 to-white py-16 md:py-24">
     <div class="container-limit mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <p class="text-xs font-semibold tracking-widest text-rose-600">FAQ</p>
@@ -214,7 +226,7 @@
           <details class="rounded-2xl border border-slate-200 p-5 bg-white">
             <summary class="font-semibold cursor-pointer">¿Cómo se gestiona la privacidad?</summary>
             <p class="mt-2 text-slate-600">
-              La información de tu familia es privada. Implementaremos buenas prácticas de seguridad y protección de datos en todo momento.
+              La información de tu familia es privada. Implementaremos buenas prácticas de seguridad y protección de datos.
             </p>
           </details>
 
@@ -253,6 +265,7 @@
         </div>
         <div class="text-center md:text-right">
           <a href="#que-es" class="text-slate-400 hover:text-white text-sm mr-4">¿Qué es?</a>
+          <a href="#como-funciona" class="text-slate-400 hover:text-white text-sm mr-4">Cómo funciona</a>
           <a href="#beneficios" class="text-slate-400 hover:text-white text-sm mr-4">Beneficios</a>
           <a href="#faq" class="text-slate-400 hover:text-white text-sm">FAQ</a>
         </div>
