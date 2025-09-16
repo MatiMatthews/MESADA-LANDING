@@ -14,12 +14,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mesada - Educa tu bolsillo" />
   <meta property="og:description" content="App de educación financiera para adolescentes (12+) que fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=6" />
+  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=7" />
   <meta property="og:url" content="https://mesada.cl" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mesada - Educa tu bolsillo" />
   <meta name="twitter:description" content="App de educación financiera para adolescentes (12+) que fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=6" />
+  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=7" />
 
   <link rel="icon" href="/favicon-b.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon-b.png" />
@@ -29,8 +29,16 @@
 
   <style>
     :root{
-      --brand: #6B4CF6;      /* morado principal */
-      --brand-2: #5F7CFB;    /* complemento suave para el gradiente */
+      /* Morados de marca */
+      --brand: #6B4CF6;
+      --brand-2: #5F7CFB;
+
+      /* Botones del hero */
+      --btnPrimaryBg: #FFFFFF;     /* “Ver cómo funciona” */
+      --btnPrimaryText: #5E54F6;
+
+      --btnSecondaryGradA: #0CCE6B;/* “Avísame…” */
+      --btnSecondaryGradB: #06B56B;
     }
     html{ scroll-behavior: smooth; }
     body{ font-family: 'Poppins', sans-serif; }
@@ -45,7 +53,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
 
-        <!-- Logo en chip morado para que siempre se vea -->
+        <!-- Logo en chip morado (siempre legible) -->
         <a href="#inicio" class="flex items-center">
           <div class="rounded-md px-2 py-1" style="background: var(--brand);">
             <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-7 w-auto" />
@@ -104,10 +112,17 @@
     </p>
 
     <div class="mt-8 flex flex-wrap gap-4 justify-center">
-      <a href="#como-funciona" class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-[var(--brand)] transition">
+      <!-- PRIMARIO: blanco sólido + texto morado -->
+      <a href="#como-funciona"
+         class="px-6 py-3 rounded-full shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-white/60"
+         style="background: var(--btnPrimaryBg); color: var(--btnPrimaryText);">
         Ver cómo funciona
       </a>
-      <a href="#aviso" class="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
+
+      <!-- SECUNDARIO: degradado verde + texto blanco -->
+      <a href="#aviso"
+         class="px-6 py-3 rounded-full text-white shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-white/60"
+         style="background: linear-gradient(90deg, var(--btnSecondaryGradA), var(--btnSecondaryGradB));">
         Avísame cuando esté lista
       </a>
     </div>
@@ -211,9 +226,8 @@
     <div class="max-w-4xl mx-auto text-center px-6">
       <h3 class="text-xl md:text-2xl font-semibold mb-4">¿Quieres que te avisemos cuando lancemos?</h3>
       <a href="#"
-         class="inline-block px-6 py-3 text-white rounded-full transition"
-         style="background: var(--brand);"
-      >
+         class="inline-block px-6 py-3 text-white rounded-full transition shadow-md hover:shadow-lg"
+         style="background: linear-gradient(90deg, var(--btnSecondaryGradA), var(--btnSecondaryGradB));">
         Quiero enterarme del lanzamiento
       </a>
     </div>
