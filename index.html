@@ -44,11 +44,6 @@
     .soft-card{ box-shadow: 0 10px 30px rgba(15, 23, 42, .08); }
     .btn{ transition:transform .06s ease, box-shadow .2s ease; }
     .btn:active{ transform: scale(.98); }
-    /* animación del menú */
-    .menu-enter{ transform: translateY(-6px); opacity: 0 }
-    .menu-enter-active{ transform: translateY(0); opacity: 1; transition: all .15s ease }
-    .menu-leave{ transform: translateY(0); opacity: 1 }
-    .menu-leave-active{ transform: translateY(-6px); opacity: 0; transition: all .12s ease }
   </style>
 </head>
 <body id="top" class="text-slate-900 bg-white selection:bg-indigo-200 selection:text-slate-900">
@@ -57,8 +52,8 @@
   <header class="sticky top-0 z-30 backdrop-blur bg-white/75 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 group" aria-label="Mesada Home">
-        <!-- tu logo -->
-        <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-8 w-auto drop-shadow-sm" />
+        <!-- Logo (si usas versión blanca sobre fondo blanco, dale un pequeño drop shadow) -->
+        <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-8 w-auto drop-shadow-[0_0_1px_rgba(0,0,0,.35)]" />
         <span class="sr-only">Mesada</span>
       </a>
 
@@ -71,7 +66,7 @@
       </nav>
 
       <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-50">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-50" aria-label="Abrir menú">
         <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -228,7 +223,7 @@
     <div class="max-w-3xl mx-auto px-6 py-16 text-center">
       <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">¿Quieres que te avisemos cuando lancemos?</h2>
 
-      <form id="leadForm" class="mt-8 grid md:grid-cols-3 gap-3 text-left">
+      <form id="leadForm" class="mt-8 grid md:grid-cols-3 gap-3 text-left" novalidate>
         <div>
           <label for="name" class="block text-sm font-medium text-slate-700">Nombre</label>
           <input id="name" name="name" type="text" required
@@ -274,7 +269,7 @@
           // cerrar menú en mobile
           if(window.innerWidth<768){ mobileMenu.classList.add('hidden'); }
         }
-      })
+      });
     });
 
     // Mobile menu
@@ -284,8 +279,10 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Envío de formulario a Google Apps Script
-    const SCRIPT_URL = "PASTE_YOUR_SCRIPT_URL_HERE";  // <--- REEMPLAZA ESTO
+    // === Envío de formulario a Google Apps Script ===
+    // Reemplaza por TU Web App URL si vuelves a desplegar
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyogHmPSjRriyb6vRyFobnFGXL0SlBs57tno5_7tC6acRe5qAj_Mm_lwsD_9IGWOp9Iiw/exec";
+
     const leadForm = document.getElementById('leadForm');
     const leadBtn  = document.getElementById('leadBtn');
     const leadMsg  = document.getElementById('leadMsg');
