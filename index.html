@@ -1,200 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Mesada - Educa tu bolsillo</title>
   <meta name="description" content="Mesada es una app de educación financiera para adolescentes (12+) que fomenta el ahorro, la planificación y hábitos saludables con guía de los padres." />
 
-  <link rel="canonical" href="https://mesada.cl/" />
-  <meta name="theme-color" content="#6B4CF6" />
-  <meta property="og:site_name" content="Mesada" />
-  <meta property="og:locale" content="es_CL" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mesada - Educa tu bolsillo" />
-  <meta property="og:description" content="App de educación financiera para adolescentes (12+) que fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=7" />
-  <meta property="og:url" content="https://mesada.cl" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mesada - Educa tu bolsillo" />
-  <meta name="twitter:description" content="App de educación financiera para adolescentes (12+) que fomenta el ahorro, planificación y hábitos saludables con guía de los padres." />
-  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=7" />
+  <!-- Canonical + metadatos -->
+  <link rel="canonical" href="https://mesada.cl/"/>
+  <meta name="theme-color" content="#6E55F6" />
+  <meta property="og:site_name" content="Mesada"/>
+  <meta property="og:locale" content="es_CL"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Mesada - Educa tu bolsillo"/>
+  <meta property="og:description" content="App de educación financiera para adolescentes (12+)."/>
+  <meta property="og:image" content="https://mesada.cl/mesada_og_image.png?v=5"/>
+  <meta property="og:url" content="https://mesada.cl"/>
 
-  <link rel="icon" href="/favicon-b.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/favicon-b.png" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Mesada - Educa tu bolsillo"/>
+  <meta name="twitter:description" content="App de educación financiera para adolescentes (12+)."/>
+  <meta name="twitter:image" content="https://mesada.cl/mesada_og_image.png?v=5"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Poppins + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root{
-      /* Morados de marca */
-      --brand: #6B4CF6;
-      --brand-2: #5F7CFB;
-
-      /* Botones del hero */
-      --btnPrimaryBg: #FFFFFF;     /* “Ver cómo funciona” */
-      --btnPrimaryText: #5E54F6;
-
-      --btnSecondaryGradA: #0CCE6B;/* “Avísame…” */
-      --btnSecondaryGradB: #06B56B;
+      --mesada-primary:#6E55F6;    /* morado */
+      --mesada-primary2:#3C77FF;   /* azul para gradiente */
+      --mesada-accent:#22c55e;     /* verde */
+      --mesada-dark:#0f172a;       /* texto fuerte */
     }
-    html{ scroll-behavior: smooth; }
-    body{ font-family: 'Poppins', sans-serif; }
-    .header-solid{ background: rgba(255,255,255,.95); backdrop-filter: blur(6px); box-shadow: 0 8px 30px rgba(0,0,0,.06); }
-    .header-transparent{ background: transparent; }
+    body{font-family:'Poppins',sans-serif;}
+    .bg-hero{
+      background: radial-gradient(1100px 450px at 50% 10%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 35%),
+                  linear-gradient(180deg, var(--mesada-primary) 0%, var(--mesada-primary2) 92%);
+    }
+    .soft-card{ box-shadow: 0 10px 30px rgba(15, 23, 42, .08); }
+    .btn{ transition:transform .06s ease, box-shadow .2s ease; }
+    .btn:active{ transform: scale(.98); }
+    /* animación del menú */
+    .menu-enter{ transform: translateY(-6px); opacity: 0 }
+    .menu-enter-active{ transform: translateY(0); opacity: 1; transition: all .15s ease }
+    .menu-leave{ transform: translateY(0); opacity: 1 }
+    .menu-leave-active{ transform: translateY(-6px); opacity: 0; transition: all .12s ease }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body id="top" class="text-slate-900 bg-white selection:bg-indigo-200 selection:text-slate-900">
 
-  <!-- HEADER -->
-  <header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 header-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
+  <!-- Header -->
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/75 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2 group" aria-label="Mesada Home">
+        <!-- tu logo -->
+        <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-8 w-auto drop-shadow-sm" />
+        <span class="sr-only">Mesada</span>
+      </a>
 
-        <!-- Logo en chip morado (siempre legible) -->
-        <a href="#inicio" class="flex items-center">
-          <div class="rounded-md px-2 py-1" style="background: var(--brand);">
-            <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-7 w-auto" />
-          </div>
-        </a>
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#que-es" class="hover:text-indigo-600">¿Qué es?</a>
+        <a href="#como-funciona" class="hover:text-indigo-600">Cómo funciona</a>
+        <a href="#beneficios" class="hover:text-indigo-600">Beneficios</a>
+        <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+      </nav>
 
-        <!-- Menú Desktop -->
-        <nav id="desktop-nav" class="hidden md:flex items-center space-x-8">
-          <a href="#que-es" class="nav-link text-white hover:text-white/80">¿Qué es?</a>
-          <a href="#como-funciona" class="nav-link text-white hover:text-white/80">Cómo funciona</a>
-          <a href="#beneficios" class="nav-link text-white hover:text-white/80">Beneficios</a>
-          <a href="#faq" class="nav-link text-white hover:text-white/80">FAQ</a>
-          <a href="#aviso" class="px-4 py-2 rounded-full bg-white/10 text-white border border-white/30 hover:bg-white/20 transition">Avísame</a>
-        </nav>
-
-        <!-- Botón menú móvil -->
-        <button id="menu-btn" class="md:hidden flex items-center text-white focus:outline-none" aria-label="Abrir menú">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-50">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
 
-    <!-- Menú Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
-      <a href="#que-es" class="block text-white hover:text-white/80">¿Qué es?</a>
-      <a href="#como-funciona" class="block text-white hover:text-white/80">Cómo funciona</a>
-      <a href="#beneficios" class="block text-white hover:text-white/80">Beneficios</a>
-      <a href="#faq" class="block text-white hover:text-white/80">FAQ</a>
-      <a href="#aviso" class="block px-4 py-2 rounded-full bg-white/10 text-white border border-white/30 hover:bg-white/20 transition w-max">Avísame</a>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden">
+      <nav class="px-6 pb-4 pt-2 bg-white border-t border-slate-100">
+        <a href="#que-es" class="block py-2 hover:text-indigo-600">¿Qué es?</a>
+        <a href="#como-funciona" class="block py-2 hover:text-indigo-600">Cómo funciona</a>
+        <a href="#beneficios" class="block py-2 hover:text-indigo-600">Beneficios</a>
+        <a href="#faq" class="block py-2 hover:text-indigo-600">FAQ</a>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO MORADO -->
-  <section id="inicio"
-    class="min-h-screen flex flex-col items-center justify-center text-center px-6 text-white"
-    style="background: linear-gradient(180deg, var(--brand) 0%, #6A55F7 45%, var(--brand-2) 100%);">
-    
-    <!-- LOGO GRANDE ENCIMA DEL TITULAR -->
-    <img
-      src="/mesada_logo_blanco.png"
-      alt="Mesada"
-      class="h-16 md:h-24 w-auto mb-6 drop-shadow-lg select-none"
-      draggable="false"
-    />
+  <!-- HERO -->
+  <section class="bg-hero text-white">
+    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28 text-center">
+      <!-- logo grande -->
+      <img src="/mesada_logo_blanco.png" alt="Mesada" class="mx-auto h-16 md:h-20 lg:h-24 w-auto mb-6 opacity-95" />
 
-    <h1 class="text-3xl md:text-5xl font-bold leading-tight max-w-5xl">
-      La forma simple de enseñar <span class="text-green-300">finanzas</span> en casa
-    </h1>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        La forma simple de enseñar
+        <span class="block mt-1"> <span class="text-emerald-300">finanzas</span> en casa</span>
+      </h1>
 
-    <p class="mt-6 max-w-2xl text-lg">
-      App de <strong>educación financiera para niños y adolescentes (12+)</strong> que fomenta el ahorro,
-      la planificación y hábitos saludables, con guía de los padres.
-    </p>
+      <p class="max-w-3xl mx-auto mt-6 text-sm md:text-base lg:text-lg text-indigo-50/95">
+        App de <strong class="font-semibold">educación financiera para niños y adolescentes (12+)</strong>
+        que fomenta el ahorro, la planificación y hábitos saludables, con guía de los padres.
+      </p>
 
-    <div class="mt-8 flex flex-wrap gap-4 justify-center">
-      <!-- PRIMARIO: blanco sólido + texto morado -->
-      <a href="#como-funciona"
-         class="px-6 py-3 rounded-full shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-white/60"
-         style="background: var(--btnPrimaryBg); color: var(--btnPrimaryText);">
-        Ver cómo funciona
-      </a>
+      <div class="mt-8 flex items-center justify-center gap-4">
+        <a href="#como-funciona"
+           class="btn inline-flex items-center gap-2 rounded-full px-5 py-3 text-white bg-white/15 ring-1 ring-white/40 hover:bg-white/25">
+          Ver cómo funciona
+        </a>
 
-      <!-- SECUNDARIO: degradado verde + texto blanco -->
-      <a href="#aviso"
-         class="px-6 py-3 rounded-full text-white shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-white/60"
-         style="background: linear-gradient(90deg, var(--btnSecondaryGradA), var(--btnSecondaryGradB));">
-        Avísame cuando esté lista
-      </a>
+        <a href="#lead"
+           class="btn inline-flex items-center gap-2 rounded-full px-5 py-3 bg-emerald-500 text-white hover:bg-emerald-600">
+          Avísame cuando esté lista
+        </a>
+      </div>
+
+      <p class="mt-6 text-xs md:text-sm text-white/80">
+        Próximamente en tus stores favoritas • 2025
+      </p>
     </div>
-
-    <p class="mt-6 opacity-90">Próximamente en tus stores favoritas • 2025</p>
   </section>
 
   <!-- ¿QUÉ ES? -->
-  <section id="que-es" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          ¿Qué es <span class="text-[var(--brand)]">Mesada</span>?
-        </h2>
-        <p class="text-gray-700 mb-6">
-          Mesada ayuda a familias a <strong>enseñar finanzas</strong> de forma práctica y entretenida. 
-          Los niños consiguen objetivos, aprenden a <strong>ahorrar</strong> y a <strong>planificar sus gastos</strong>, 
-          mientras los padres acompañan el proceso con <strong>herramientas de guía y control</strong>.
-        </p>
-        <ul class="space-y-3 text-gray-800">
-          <li>✔ Cuotas y metas para que el ahorro sea un hábito.</li>
-          <li>✔ Desafíos y logros que refuerzan la constancia.</li>
-          <li>✔ Guía parental con límites y conversaciones sobre dinero.</li>
-        </ul>
-      </div>
-      <div>
-        <img src="/ilustracion_1.png" alt="Ilustración Mesada" class="rounded-xl shadow-lg" />
+  <section id="que-es" class="relative bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-emerald-600 text-xs font-semibold">¿QUÉ ES MESADA?</p>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">La forma simple de enseñar <span class="text-emerald-600">finanzas</span> en casa</h2>
+          <p class="mt-4 text-slate-600">Mesada ayuda a familias a <strong>enseñar finanzas</strong> de forma práctica y entretenida. Los niños consiguen objetivos, aprenden a <strong>ahorrar</strong> y a <strong>planificar sus gastos</strong>, mientras los padres acompañan con herramientas de guía y control.</p>
+
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li class="flex gap-3"><span class="mt-1 text-emerald-600">✔</span> Cuotas y metas para que el ahorro se vuelva un hábito.</li>
+            <li class="flex gap-3"><span class="mt-1 text-emerald-600">✔</span> Desafíos y logros que refuerzan la constancia.</li>
+            <li class="flex gap-3"><span class="mt-1 text-emerald-600">✔</span> Guía parental con límites y conversaciones sobre dinero.</li>
+          </ul>
+        </div>
+
+        <div class="soft-card rounded-3xl bg-white p-6">
+          <img src="/ilustracion_1.png" alt="Ilustración Mesada" class="w-full h-auto rounded-2xl"/>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CÓMO FUNCIONA -->
-  <section id="como-funciona" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">¿Cómo funciona?</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Desde qué edad se puede usar?</h3>
-          <p>Recomendamos <strong>desde los 12 años</strong>. Pueden usarla con supervisión al inicio y ganar autonomía con el tiempo.</p>
+  <section id="como-funciona" class="bg-gradient-to-b from-emerald-50 via-white to-indigo-50">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p class="text-indigo-600 text-xs font-semibold">PREGUNTAS RÁPIDAS</p>
+      <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">¿Cómo funciona?</h2>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Desde qué edad se puede usar?</h3>
+          <p class="mt-2 text-slate-600">Recomendamos <strong>desde los 12 años+</strong>. Pueden usarla con supervisión de un adulto y ganar autonomía a medida que avanzan.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Necesita tarjeta o cuenta bancaria?</h3>
-          <p>No al comenzar. Partimos con metas, hábitos y desafíos. La integración bancaria llegará más adelante.</p>
+
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Necesita tarjeta o cuenta bancaria?</h3>
+          <p class="mt-2 text-slate-600">No para comenzar. Partimos con metas, hábitos y desafíos. La integración financiera llegará más adelante.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Cómo funciona la mesada o asignación?</h3>
-          <p>Define montos semanales o mensuales y asígnalos a metas o tareas. Los niños ven su progreso y celebran logros.</p>
+
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Cómo funciona la mesada o asignación?</h3>
+          <p class="mt-2 text-slate-600">Define montos semanales o mensuales y asócialos a tareas o metas. Los niños ven su progreso y celebran logros al cumplir objetivos.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Cuánto cuesta?</h3>
-          <p>La app tendrá un plan gratuito y uno premium con funciones avanzadas. Actualmente en etapa de espera.</p>
+
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Cuánto cuesta?</h3>
+          <p class="mt-2 text-slate-600">La app contará con un plan gratuito y uno premium con funciones avanzadas (por confirmar). Estamos en etapa de espera.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- BENEFICIOS -->
-  <section id="beneficios" class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">Beneficios</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white shadow rounded-lg p-6">
-          <h3 class="font-semibold text-[var(--brand)] mb-4">Para padres</h3>
-          <ul class="space-y-2 text-gray-700">
+  <section id="beneficios" class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p class="text-emerald-600 text-xs font-semibold">BENEFICIOS</p>
+      <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">Pensado para <span class="text-indigo-600">padres</span> y <span class="text-emerald-600">niños</span></h2>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">Para padres</h3>
+          <ul class="mt-3 space-y-2 text-slate-600">
             <li>✔ Panel con metas, tareas y seguimiento.</li>
             <li>✔ Límites configurables y guía de conversaciones.</li>
             <li>✔ Reportes de progreso y hábitos.</li>
           </ul>
         </div>
-        <div class="bg-white shadow rounded-lg p-6">
-          <h3 class="font-semibold text-green-600 mb-4">Para niños (12+)</h3>
-          <ul class="space-y-2 text-gray-700">
+
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">Para niños (12+)</h3>
+          <ul class="mt-3 space-y-2 text-slate-600">
             <li>✔ Desafíos, logros y recompensas.</li>
             <li>✔ Objetivos de ahorro visuales y alcanzables.</li>
             <li>✔ Educación financiera práctica, paso a paso.</li>
@@ -205,81 +205,132 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">Preguntas Frecuentes</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Es seguro?</h3>
-          <p>Sí, Mesada está diseñada para que los niños aprendan en un entorno controlado y con supervisión de los padres.</p>
+  <section id="faq" class="bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 text-center">Preguntas Frecuentes</h2>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Es seguro?</h3>
+          <p class="mt-2 text-slate-600">Sí, Mesada está diseñada para que los niños aprendan en un entorno controlado y con supervisión de los padres.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
-          <h3 class="font-semibold mb-2">¿Funciona en todos los celulares?</h3>
-          <p>La app será compatible con iOS y Android, y podrá usarse en smartphones y tablets.</p>
+
+        <div class="soft-card rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-slate-900">¿Funciona en todos los celulares?</h3>
+          <p class="mt-2 text-slate-600">Será compatible con iOS y Android; podrán usarla en smartphones y tablets.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AVISO (CTA final) -->
-  <section id="aviso" class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h3 class="text-xl md:text-2xl font-semibold mb-4">¿Quieres que te avisemos cuando lancemos?</h3>
-      <a href="#"
-         class="inline-block px-6 py-3 text-white rounded-full transition shadow-md hover:shadow-lg"
-         style="background: linear-gradient(90deg, var(--btnSecondaryGradA), var(--btnSecondaryGradB));">
-        Quiero enterarme del lanzamiento
-      </a>
+  <!-- FORMULARIO LEAD -->
+  <section id="lead" class="bg-white border-t border-slate-100">
+    <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">¿Quieres que te avisemos cuando lancemos?</h2>
+
+      <form id="leadForm" class="mt-8 grid md:grid-cols-3 gap-3 text-left">
+        <div>
+          <label for="name" class="block text-sm font-medium text-slate-700">Nombre</label>
+          <input id="name" name="name" type="text" required
+                 class="mt-2 w-full rounded-xl border-slate-200 focus:border-indigo-500 focus:ring-indigo-500"
+                 placeholder="Tu nombre" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+          <input id="email" name="email" type="email" required
+                 class="mt-2 w-full rounded-xl border-slate-200 focus:border-indigo-500 focus:ring-indigo-500"
+                 placeholder="tucorreo@dominio.com" />
+        </div>
+
+        <div class="flex items-end">
+          <button id="leadBtn" type="submit"
+                  class="btn w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-emerald-500 text-white hover:bg-emerald-600">
+            Quiero enterarme del lanzamiento
+          </button>
+        </div>
+      </form>
+
+      <p id="leadMsg" class="mt-4 text-sm"></p>
     </div>
   </section>
 
-  <footer class="bg-gray-900 text-white py-6 text-center">
-    <p>&copy; 2025 Mesada. Todos los derechos reservados.</p>
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-center">
+      <p class="text-xs">© 2025 Mesada. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <!-- JS: Menú móvil + cambio de header con scroll -->
+  <!-- JS -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const header = document.getElementById("site-header");
-    const desktopNav = document.getElementById("desktop-nav");
-    const hero = document.getElementById("inicio");
-
-    // Menú mobile
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+          // cerrar menú en mobile
+          if(window.innerWidth<768){ mobileMenu.classList.add('hidden'); }
+        }
+      })
     });
 
-    // Cambiar header (transparente sobre hero / blanco al bajar)
-    const io = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Hero visible -> header transparente + links blancos
-            header.classList.remove("header-solid");
-            header.classList.add("header-transparent");
-            desktopNav.querySelectorAll(".nav-link").forEach(a=>{
-              a.classList.remove("text-gray-700","hover:text-[var(--brand)]");
-              a.classList.add("text-white","hover:text-white/80");
-            });
-            menuBtn.classList.remove("text-gray-700");
-            menuBtn.classList.add("text-white");
-          } else {
-            // Fuera del hero -> header blanco + links oscuros
-            header.classList.remove("header-transparent");
-            header.classList.add("header-solid");
-            desktopNav.querySelectorAll(".nav-link").forEach(a=>{
-              a.classList.remove("text-white","hover:text-white/80");
-              a.classList.add("text-gray-700","hover:text-[var(--brand)]");
-            });
-            menuBtn.classList.remove("text-white");
-            menuBtn.classList.add("text-gray-700");
-          }
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', ()=>{
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Envío de formulario a Google Apps Script
+    const SCRIPT_URL = "PASTE_YOUR_SCRIPT_URL_HERE";  // <--- REEMPLAZA ESTO
+    const leadForm = document.getElementById('leadForm');
+    const leadBtn  = document.getElementById('leadBtn');
+    const leadMsg  = document.getElementById('leadMsg');
+
+    leadForm?.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const name  = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      // validación simple
+      if(!name || !email){
+        leadMsg.textContent = "Por favor completa nombre y email.";
+        leadMsg.className = "mt-4 text-sm text-rose-600";
+        return;
+      }
+
+      // anti-doble-click
+      leadBtn.disabled = true;
+      leadBtn.classList.add('opacity-70','cursor-not-allowed');
+      leadMsg.textContent = "Enviando…";
+      leadMsg.className = "mt-4 text-sm text-slate-500";
+
+      try{
+        const res = await fetch(SCRIPT_URL, {
+          method:"POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify({name, email})
         });
-      },
-      { rootMargin: "-80px 0px 0px 0px", threshold: 0 }
-    );
-    io.observe(hero);
+        const data = await res.json();
+
+        if(data.status === "ok"){
+          leadMsg.textContent = "¡Gracias! Te avisaremos apenas esté lista.";
+          leadMsg.className = "mt-4 text-sm text-emerald-600";
+          leadForm.reset();
+        }else{
+          throw new Error("Error en el servidor");
+        }
+      }catch(err){
+        leadMsg.textContent = "Hubo un problema. Intenta de nuevo en un momento.";
+        leadMsg.className = "mt-4 text-sm text-rose-600";
+      }finally{
+        leadBtn.disabled = false;
+        leadBtn.classList.remove('opacity-70','cursor-not-allowed');
+      }
+    });
   </script>
 </body>
 </html>
