@@ -52,7 +52,7 @@
   <header class="sticky top-0 z-30 backdrop-blur bg-white/75 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 group" aria-label="Mesada Home">
-        <!-- Logo (si usas versión blanca sobre fondo blanco, dale un pequeño drop shadow) -->
+        <!-- Logo -->
         <img src="/mesada_logo_blanco.png" alt="Mesada" class="h-8 w-auto drop-shadow-[0_0_1px_rgba(0,0,0,.35)]" />
         <span class="sr-only">Mesada</span>
       </a>
@@ -266,8 +266,7 @@
         if(id.length>1){
           e.preventDefault();
           document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
-          // cerrar menú en mobile
-          if(window.innerWidth<768){ mobileMenu.classList.add('hidden'); }
+          if(window.innerWidth<768){ mobileMenu.classList.add('hidden'); } // cerrar menú en mobile
         }
       });
     });
@@ -280,8 +279,8 @@
     });
 
     // === Envío de formulario a Google Apps Script ===
-    // Reemplaza por TU Web App URL si vuelves a desplegar
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxEZtChlGe5fZaZULu-1qnS7PPYIjDq55H6wbN6GL_M5yGWXFEEnbb9BKBxLy5-MQJqA/exec";
+    // Tu Web App URL (versión /exec)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxidX3ag9apsLq8x5zRVUcMa_V16F-_ZyujgQShzN_JDVF8O60f8_2zCYpePVQUn1alHA/exec";
 
     const leadForm = document.getElementById('leadForm');
     const leadBtn  = document.getElementById('leadBtn');
@@ -308,17 +307,21 @@
       try{
         const res = await fetch(SCRIPT_URL, {
           method:"POST",
-          headers: {"Content-Type":"application/json"},
-          body: JSON.stringify({name, email})
+          headers: { "Content-Type":"application/json" },
+          body: JSON.stringify({ name, email })
         });
-        const data = await res.json();
 
-        if(data.status === "ok"){
+        // leer como texto primero por si el script devuelve texto plano
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); } catch (_) { data = { status: res.ok ? "ok" : "error" }; }
+
+        if(res.ok && data.status === "ok"){
           leadMsg.textContent = "¡Gracias! Te avisaremos apenas esté lista.";
           leadMsg.className = "mt-4 text-sm text-emerald-600";
           leadForm.reset();
         }else{
-          throw new Error("Error en el servidor");
+          throw new Error(data.message || "Error en el servidor");
         }
       }catch(err){
         leadMsg.textContent = "Hubo un problema. Intenta de nuevo en un momento.";
