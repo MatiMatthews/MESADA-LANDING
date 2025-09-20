@@ -298,9 +298,10 @@
   </script>
 
   <!-- JS: Firebase / Firestore -->
- <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 
      // 👇 PEGA AQUÍ TU BLOQUE DE CONFIG DE FIREBASE
     // (el que copiaste desde Project settings → General → Your apps → SDK setup and configuration)
@@ -315,9 +316,17 @@
     };
     // 👆 FIN BLOQUE DE CONFIG
 
-  // --- Inicialización
+    // --- Inicialización
   const app = initializeApp(firebaseConfig);
-  const db  = getFirestore(app);
+
+  // === App Check con reCAPTCHA v3 ===
+  const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider("6LdxLM8rAAAAAOKASyvYb4UoiAA67GPHx1hanJ8R"), // 👈 reemplaza aquí con tu site key
+    isTokenAutoRefreshEnabled: true
+  });
+
+  // Firestore
+  const db = getFirestore(app);
 
   // --- Form
   const leadForm = document.getElementById('leadForm');
