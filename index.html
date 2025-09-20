@@ -297,11 +297,11 @@
   </script>
 
   <!-- JS: Firebase / Firestore -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-    // 👇 PEGA AQUÍ TU BLOQUE DE CONFIG DE FIREBASE
+     // 👇 PEGA AQUÍ TU BLOQUE DE CONFIG DE FIREBASE
     // (el que copiaste desde Project settings → General → Your apps → SDK setup and configuration)
     const firebaseConfig = {
       apiKey: "AIzaSyCb3EHQegS1ollFaKrY7EDERt0LZX_bQzo",
@@ -314,48 +314,52 @@
     };
     // 👆 FIN BLOQUE DE CONFIG
 
-    const app = initializeApp(firebaseConfig);
-    const db  = getFirestore(app);
+  // --- Inicialización
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
 
-    const leadForm = document.getElementById('leadForm');
-    const leadBtn  = document.getElementById('leadBtn');
-    const leadMsg  = document.getElementById('leadMsg');
+  // --- Form
+  const leadForm = document.getElementById('leadForm');
+  const leadBtn  = document.getElementById('leadBtn');
+  const leadMsg  = document.getElementById('leadMsg');
 
-    leadForm?.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const name  = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+  leadForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name  = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
 
-      if(!name || !email){
-        leadMsg.textContent = "Por favor completa nombre y email.";
-        leadMsg.className = "mt-4 text-sm text-rose-600";
-        return;
-      }
+    if (!name || !email) {
+      leadMsg.textContent = "Por favor completa nombre y email.";
+      leadMsg.className = "mt-4 text-sm text-rose-600";
+      return;
+    }
 
-      // anti doble click
-      leadBtn.disabled = true;
-      leadBtn.classList.add('opacity-70','cursor-not-allowed');
-      leadMsg.textContent = "Enviando…";
-      leadMsg.className = "mt-4 text-sm text-slate-500";
+    // anti doble click
+    leadBtn.disabled = true;
+    leadBtn.classList.add('opacity-70','cursor-not-allowed');
+    leadMsg.textContent = "Enviando…";
+    leadMsg.className = "mt-4 text-sm text-slate-500";
 
-      try{
-        await addDoc(collection(db, "leads"), {
-          name,
-          email,
-          createdAt: serverTimestamp()
-        });
-        leadMsg.textContent = "¡Gracias! Te avisaremos apenas esté lista.";
-        leadMsg.className = "mt-4 text-sm text-emerald-600";
-        leadForm.reset();
-      }catch(err){
-        console.error("Error guardando lead:", err);
-        leadMsg.textContent = "Hubo un problema. Intenta de nuevo.";
-        leadMsg.className = "mt-4 text-sm text-rose-600";
-      }finally{
-        leadBtn.disabled = false;
-        leadBtn.classList.remove('opacity-70','cursor-not-allowed');
-      }
-    });
-  </script>
+    try {
+      const ref = await addDoc(collection(db, "leads"), {
+        name,
+        email,
+        createdAt: serverTimestamp()
+      });
+      console.log("Lead guardado con id:", ref.id);
+      leadMsg.textContent = "¡Gracias! Te avisaremos apenas esté lista.";
+      leadMsg.className = "mt-4 text-sm text-emerald-600";
+      leadForm.reset();
+    } catch (err) {
+      console.error("Firestore error:", err);
+      // Muestra el código de error para diagnosticar (p.ej. 'permission-denied')
+      leadMsg.textContent = `Hubo un problema: ${err.code || err.message}.`;
+      leadMsg.className = "mt-4 text-sm text-rose-600";
+    } finally {
+      leadBtn.disabled = false;
+      leadBtn.classList.remove('opacity-70','cursor-not-allowed');
+    }
+  });
+</script>
 </body>
 </html>
