@@ -9,7 +9,7 @@
 
   <!-- Canonical + metadatos -->
   <link rel="canonical" href="https://mesada.cl/"/>
-  <meta name="theme-color" content="#6E55F6" />
+  <meta name="theme-color" content="#8E7DFF" />
   <meta property="og:site_name" content="Mesada"/>
   <meta property="og:locale" content="es_CL"/>
   <meta property="og:type" content="website"/>
@@ -35,10 +35,10 @@
 
   <style>
     :root{
-      --mesada-primary:#6E55F6;    /* morado */
-      --mesada-primary2:#3C77FF;   /* azul para gradiente */
-      --mesada-accent:#22c55e;     /* verde */
-      --mesada-dark:#0f172a;       /* texto fuerte */
+      --mesada-primary:#8E7DFF;   /* morado NUEVO */
+      --mesada-primary2:#6E55F6;  /* tono cercano para gradiente */
+      --mesada-accent:#22c55e;    /* verde */
+      --mesada-dark:#0f172a;      /* texto fuerte */
     }
     body{font-family:'Poppins',sans-serif;}
     .bg-hero{
@@ -56,8 +56,8 @@
   <header class="sticky top-0 z-30 backdrop-blur bg-white/75 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 group" aria-label="Mesada Home">
-       <img src="/mesada_logo_blanco.png" alt="Mesada"
-     class="h-8 w-auto bg-[#6E55F6] rounded-md p-1" />
+        <img src="/mesada_logo_blanco.png" alt="Mesada"
+             class="h-8 w-auto bg-[#8E7DFF] rounded-md p-1" />
         <span class="sr-only">Mesada</span>
       </a>
 
@@ -289,7 +289,6 @@
         if(id && id.length>1){
           e.preventDefault();
           document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
-          // cerrar menú en mobile
           if(window.innerWidth<768){ document.getElementById('mobileMenu').classList.add('hidden'); }
         }
       });
@@ -307,25 +306,22 @@
   import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
   import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 
-     // 👇 PEGA AQUÍ TU BLOQUE DE CONFIG DE FIREBASE
-    // (el que copiaste desde Project settings → General → Your apps → SDK setup and configuration)
-    const firebaseConfig = {
-      apiKey: "AIzaSyCb3EHQegS1ollFaKrY7EDERt0LZX_bQzo",
-      authDomain: "mesada-landing.firebaseapp.com",
-      projectId: "mesada-landing",
-      storageBucket: "mesada-landing.firebasestorage.app",
-      messagingSenderId: "284023066442",
-      appId: "1:284023066442:web:6a52e71732ce7f96be3bb3",
-      measurementId: "G-4JG2MB0FHY"
-    };
-    // 👆 FIN BLOQUE DE CONFIG
+  const firebaseConfig = {
+    apiKey: "AIzaSyCb3EHQegS1ollFaKrY7EDERt0LZX_bQzo",
+    authDomain: "mesada-landing.firebaseapp.com",
+    projectId: "mesada-landing",
+    storageBucket: "mesada-landing.firebasestorage.app",
+    messagingSenderId: "284023066442",
+    appId: "1:284023066442:web:6a52e71732ce7f96be3bb3",
+    measurementId: "G-4JG2MB0FHY"
+  };
 
-    // --- Inicialización
+  // --- Inicialización
   const app = initializeApp(firebaseConfig);
 
   // === App Check con reCAPTCHA v3 ===
   const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider("6LdxLM8rAAAAAOKASyvYb4UoiAA67GPHx1hanJ8R"), // 👈 reemplaza aquí con tu site key
+    provider: new ReCaptchaV3Provider("6LdxLM8rAAAAAOKASyvYb4UoiAA67GPHx1hanJ8R"),
     isTokenAutoRefreshEnabled: true
   });
 
@@ -366,7 +362,6 @@
       leadForm.reset();
     } catch (err) {
       console.error("Firestore error:", err);
-      // Muestra el código de error para diagnosticar (p.ej. 'permission-denied')
       leadMsg.textContent = `Hubo un problema: ${err.code || err.message}.`;
       leadMsg.className = "mt-4 text-sm text-rose-600";
     } finally {
