@@ -286,24 +286,187 @@
   </div>
 </section>
   
-  <!-- FAQ -->
-  <section id="faq" class="bg-gradient-to-b from-white to-slate-50">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 text-center">Preguntas Frecuentes</h2>
+  <!-- ========== FAQ (Acordeón accesible) ========== -->
+<section id="faq" class="bg-gradient-to-b from-white to-slate-50">
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-6">
+      Preguntas frecuentes
+    </h2>
+    <p class="text-center text-slate-600 max-w-3xl mx-auto mb-10">
+      Aquí resolvemos las dudas más comunes sobre Mesada. Si no ves tu pregunta,
+      escríbenos a <a href="mailto:hola@mesada.cl" class="text-indigo-600 underline">hola@mesada.cl</a>.
+    </p>
 
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <div class="soft-card rounded-2xl bg-white p-6">
-          <h3 class="font-semibold text-slate-900">¿Es seguro?</h3>
-          <p class="mt-2 text-slate-600">Sí, Mesada está diseñada para que los niños aprendan en un entorno controlado y con supervisión de los padres.</p>
+    <div class="divide-y divide-slate-200 rounded-2xl bg-white shadow-sm soft-card">
+      <!-- item -->
+      <details class="group open:bg-white">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-t-2xl">
+          <span>¿Qué es Mesada?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Mesada es una app para familias que enseña hábitos financieros a través de
+          <strong>tareas</strong> y una <strong>mesada semanal</strong>. Los padres asignan y
+          aprueban tareas; los hijos ven su progreso y cuánto van ganando.
         </div>
+      </details>
 
-        <div class="soft-card rounded-2xl bg-white p-6">
-          <h3 class="font-semibold text-slate-900">¿Funciona en todos los celulares?</h3>
-          <p class="mt-2 text-slate-600">Será compatible con iOS y Android; podrán usarla en smartphones y tablets.</p>
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Desde qué edad se recomienda?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Recomendamos <strong>12 años o más</strong>. Niños más pequeños también pueden usarla con
+          mayor acompañamiento de un adulto.
         </div>
-      </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Cuánto cuesta?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Lanzaremos con un <strong>plan gratuito</strong> y un plan <strong>premium</strong> con funciones
+          avanzadas. Aún estamos definiendo precios. ¿Quieres enterarte? Déjanos tu correo en el formulario.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Necesito una tarjeta o una cuenta bancaria?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          No para comenzar. Hoy Mesada funciona con <strong>tareas</strong> y
+          <strong> mesada semanal</strong>. Integraciones financieras podrían llegar más adelante.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Cómo funciona la mesada semanal?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Definen un monto semanal y las <strong>tareas</strong> que se deben completar. Al cierre
+          de la semana, los padres revisan lo realizado y la app calcula el monto final según lo
+          acordado.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Hay perfiles separados para padres e hijos?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Sí. <strong>Padres</strong> crean y aprueban tareas, definen límites y ven reportes.
+          <strong> Hijos</strong> ven su tablero con progreso semanal y su mesada estimada.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿En qué dispositivos estará disponible?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Planeamos compatibilidad con <strong>iOS y Android</strong>. Hoy estamos en etapa de
+          desarrollo y lista de espera.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Cómo protegen mis datos?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Usamos prácticas de seguridad estándar del sector. La captura de leads está protegida con
+          <strong>App Check (reCAPTCHA v3)</strong> y reglas de base de datos que verifican las solicitudes.
+          No compartimos datos con terceros para fines comerciales.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿En qué países estará disponible?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Partiremos en <strong>Chile</strong>. Si te interesa en otro país, cuéntanos en el
+          formulario para priorizar próximos lanzamientos.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+          <span>¿Puedo eliminar mis datos o darme de baja?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Sí. Escríbenos a <a href="mailto:hola@mesada.cl" class="text-indigo-600 underline">hola@mesada.cl</a>
+          y eliminaremos tus datos de forma segura.
+        </div>
+      </details>
+
+      <!-- item -->
+      <details class="group rounded-b-2xl">
+        <summary
+          class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-medium text-slate-900 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-b-2xl">
+          <span>¿Cómo me entero del lanzamiento?</span>
+          <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-slate-600">
+          Deja tu <strong>nombre y correo</strong> en el formulario de esta página. Te avisaremos apenas esté lista.
+        </div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FORMULARIO LEAD -->
   <section id="lead" class="bg-white border-t border-slate-100">
