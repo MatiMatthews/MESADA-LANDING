@@ -60,6 +60,16 @@
       linear-gradient(180deg, var(--mesada-primary) 0%, var(--mesada-primary-2) 92%);
   }
 
+  /* ===== Display & texto (alineado a tokens de tipografía) ===== */
+  .display-title{
+    font-family: 'Dela Gothic One', system-ui, -apple-system, Segoe UI, Roboto, 'Poppins', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .subtitle{
+    color: #475569; /* slate-600 */
+  }
+
   /* ===== Cards y botones con tokens ===== */
   .soft-card{ box-shadow: var(--elev-1); }
   .btn{ transition:transform .06s ease, box-shadow .2s ease; border-radius: var(--radius-xl); }
@@ -95,7 +105,24 @@
 
   /* Pequeños refinamientos de contraste legible sobre el gradiente */
   .bg-hero p{ text-shadow: 0 1px 0 rgba(0,0,0,.15); }
-</style>
+
+  /* ===== Efecto “glass” del header ===== */
+  .glass{ backdrop-filter: saturate(180%) blur(8px); }
+
+  /* ===== Mockup con borde negro tipo celular ===== */
+  .phone-frame{
+    border: 12px solid var(--mesada-ink);   /* marco negro */
+    border-radius: 2rem;                    /* curvas tipo iPhone */
+    overflow: hidden;
+    background:#000;                        /* bisel interior oscuro */
+    box-shadow: 0 8px 24px rgba(0,0,0,.15); /* profundidad suave */
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .phone-frame:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.2);
+  }
+  </style>
 
 </head>
 <body id="top" class="bg-white selection:bg-indigo-200 selection:text-slate-900">
